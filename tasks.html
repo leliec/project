@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results – Regression Analysis</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="tasks-page">
+    <div class="menu-toggle">
+      <img src="media/image/home.png" alt="Open menu" />
+    </div>
+
+    <div class="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a href="data.html">Data</a>
+      <a href="tasks.html">Results</a>
+    </div>
+
+    <header class="hero">
+      <video autoplay muted loop playsinline id="background-video">
+        <source src="media/video/fondtasks.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Results & Model</h1>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="centered-section fade-in">
+        <h2>Results</h2>
+        <div class="results-layout">
+          <div id="regression-chart"></div>
+          <div id="detail-box" class="detail-card">
+            <div id="detail-default">
+              <p>Hover over a parameter to analyse its impact on anxiety.</p>
+            </div>
+            <div id="detail-content" style="display: none">
+              <h4 id="det-title"></h4>
+              <div class="stats-row">
+                <span>Coeff: <strong id="det-coef"></strong></span>
+                <span>p: <strong id="det-p"></strong></span>
+              </div>
+              <p id="det-desc"></p>
+              <div class="audio-example">
+                <p id="det-audio-legend"></p>
+                <audio id="det-audio-player" controls>
+                  <source src="" type="audio/mpeg" />
+                </audio>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider" />
+
+      <section class="centered-section fade-in">
+        <h2>Model</h2>
+        <p>
+          The analysis is based on a multivariate linear regression aimed at
+          modeling the relationship between the perceived anxiety score based on
+          synthesis parameters:
+        </p>
+        <p style="text-align: center; font-style: italic; margin: 20px 0">
+          Yᵢ = β₀ + ∑ⱼ₌₁ᵖ βⱼ·Xᵢⱼ + εᵢ
+        </p>
+        <p>
+          <strong>Yᵢ</strong>: anxiety score of sound i<br />
+          <strong>Xᵢⱼ</strong>: various synthesis parameters (ADSR envelope
+          variables of the first oscillator) and added variables: the total
+          number of oscillators used, the presence of each waveform (sinusoidal,
+          triangular, square, sawtooth), the number of oscillators with a
+          non-zero "fine" frequency, an indicator of a fundamental frequency
+          deviation likely to generate dissonance or internal timbre
+          movement.<br />
+          <strong>βⱼ</strong>: estimated coefficients for each independent
+          variable<br />
+          <strong>εᵢ</strong>: error
+        </p>
+      </section>
+      <div class="navigation-buttons fade-in">
+        <a href="index.html" class="nav-button">Back to Theory</a>
+        <a href="data.html" class="nav-button">Explore the Data</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Synthesizer & Sound Perception — Lélie Chenouga</p>
+      <p>
+        <a href="index.html">Home</a> | <a href="data.html">Data</a> |
+        <a href="tasks.html">Results</a>
+      </p>
+    </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/task.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data – Sound Analysis</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="data-page">
+    <div class="menu-toggle">
+      <img src="media/image/home.png" alt="Open menu" />
+    </div>
+
+    <div class="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a href="data.html">Data</a>
+      <a href="tasks.html">Results</a>
+    </div>
+
+    <header class="hero">
+      <video autoplay muted loop playsinline id="background-video">
+        <source src="media/video/fonddata.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Data</h1>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="centered-section fade-in">
+        <h2>Database : Sounds and Anxiety Scores</h2>
+        <p>
+          According to our 69 respondents, here are the extremes among the 256
+          sounds of the dataset (click on the podium steps to play the sounds).:
+        </p>
+      </section>
+
+      <section class="podiums-wrapper fade-in">
+        <div class="podium-group">
+          <h3>Top 3 Most Anxiogenic</h3>
+          <div class="podium">
+            <div
+              class="step rank-2"
+              onclick="playPodium('media/audio/SON112.wav')"
+            >
+              <span>2</span>
+            </div>
+            <div
+              class="step rank-1"
+              onclick="playPodium('media/audio/SON100.wav')"
+            >
+              <span>1</span>
+            </div>
+            <div
+              class="step rank-3"
+              onclick="playPodium('media/audio/SON89.wav')"
+            >
+              <span>3</span>
+            </div>
+          </div>
+        </div>
+        <div class="podium-group">
+          <h3>Top 3 Less Anxiogenic</h3>
+          <div class="podium">
+            <div
+              class="step rank-2"
+              onclick="playPodium('media/audio/SON215.wav')"
+            >
+              <span>2</span>
+            </div>
+            <div
+              class="step rank-1"
+              onclick="playPodium('media/audio/SON39.wav')"
+            >
+              <span>1</span>
+            </div>
+            <div
+              class="step rank-3"
+              onclick="playPodium('media/audio/SON37.wav')"
+            >
+              <span>3</span>
+            </div>
+          </div>
+        </div>
+        <div class="podium-group">
+          <h3>Top 3 Most Controversial</h3>
+          <div class="podium">
+            <div
+              class="step rank-2"
+              onclick="playPodium('media/audio/SON180.wav')"
+            >
+              <span>2</span>
+            </div>
+            <div
+              class="step rank-1"
+              onclick="playPodium('media/audio/SON44.wav')"
+            >
+              <span>1</span>
+            </div>
+            <div
+              class="step rank-3"
+              onclick="playPodium('media/audio/SON203.wav')"
+            >
+              <span>3</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="centered-section fade-in">
+        <h2 style="text-align: center; margin-bottom: 40px">Data Overview</h2>
+        <div class="distribution-container">
+          <div id="hist-scores" class="chart-box">
+            <h3 class="chart-title">Figure 1: Anxiety Scores Distribution</h3>
+            <div class="d3-chart"></div>
+          </div>
+          <div id="hist-sounds" class="chart-box">
+            <h3 class="chart-title">Figure 2: Mean Scores per Sound</h3>
+            <div class="d3-chart"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bias-section fade-in">
+        <div class="bias-layout">
+          <div id="bias-chart" class="chart-box">
+            <h3 class="chart-title">Presentation Order Bias Analysis</h3>
+            <div class="d3-chart"></div>
+          </div>
+          <div class="bias-text">
+            <h3>Is there a fatigue effect?</h3>
+            <p>
+              The regression analysis shows a correlation of
+              <strong id="bias-r">0.024</strong> with a p-value of
+              <strong id="bias-p">0.08</strong>. Since p > 0.05, we conclude
+              that the order in which sounds were presented did not
+              significantly bias the results. Yet we notice that less extreme
+              high scores are given from the few respondents who answered more
+              than 60 sounds.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="navigation-buttons fade-in">
+        <a href="index.html" class="nav-button">Back to Theory</a>
+        <a href="tasks.html" class="nav-button">See Results</a>
+      </div>
+
+      <section class="centered-section fade-in">
+        <h2>Download Resources</h2>
+        <div class="download-links">
+          <a
+            href="https://drive.google.com/file/d/1ULDUe9EK3V70hAr1sxATic6fB8XmatuK/view?usp=sharing"
+            target="_blank"
+            class="download-button"
+            >Access CSV dataset (Parameters & Scores)</a
+          >
+          <a
+            href="https://drive.google.com/drive/folders/1mj2Y4pkR3n5isWjRgJBjeO502AEbmGzl?usp=sharing"
+            target="_blank"
+            class="download-button"
+            >Access all Sound Files</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 Synthesizer & Sound Perception — Lélie Chenouga</p>
+      <p>
+        <a href="index.html">Home</a> | <a href="data.html">Data</a> |
+        <a href="tasks.html">Results</a>
+      </p>
+    </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
+  </body>
+</html>
