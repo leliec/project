@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <title>Data – Sound Analysis</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -31,8 +31,8 @@
       <section class="centered-section fade-in">
         <h2>Database : Sounds and Anxiety Scores</h2>
         <p>
-          According to our 69 respondents, here are the extremes among the 256
-          sounds of the dataset (click on the podium steps to play the sounds).:
+          Click on the podium steps to hear the most extremes among the <strong>255</strong>
+          sounds of the dataset, according to our <strong>69</strong> respondents :
         </p>
       </section>
 
@@ -110,6 +110,7 @@
 
       <section class="centered-section fade-in">
         <h2 style="text-align: center; margin-bottom: 40px">Data Overview</h2>
+        <p> Figure 1 displays the distribution of all individual anxiety scores across all sounds, while Figure 2 shows the distribution of the average anxiety scores per sound. The overall anxiety score mean is 54/100. Although responses vary widely between participants (standard deviation = 33/100), this variability reflects individual differences in sound perception rather than measurement noise. However, it does not prevent clear differences in anxiety levels between sounds from being observed.</p>
         <div class="distribution-container">
           <div id="hist-scores" class="chart-box">
             <h3 class="chart-title">Figure 1: Anxiety Scores Distribution</h3>
@@ -120,24 +121,28 @@
             <div class="d3-chart"></div>
           </div>
         </div>
+            <p>
+          
+          </p>
       </section>
 
       <section class="bias-section fade-in">
         <div class="bias-layout">
           <div id="bias-chart" class="chart-box">
-            <h3 class="chart-title">Presentation Order Bias Analysis</h3>
+            <h3 class="chart-title">Order Bias & Variance Analysis</h3>
             <div class="d3-chart"></div>
           </div>
-          <div class="bias-text">
-            <h3>Is there a fatigue effect?</h3>
+          <div class="smaller-text">
+          <h3>Fatigue or Calibration Effect ?</h3>
             <p>
-              The regression analysis shows a correlation of
-              <strong id="bias-r">0.024</strong> with a p-value of
-              <strong id="bias-p">0.08</strong>. Since p > 0.05, we conclude
-              that the order in which sounds were presented did not
-              significantly bias the results. Yet we notice that less extreme
-              high scores are given from the few respondents who answered more
-              than 60 sounds.
+              Presentation order of the sounds does not bias average scores (r = 0.009, p = 0.96). 
+              However, a <strong>significant calibration effect</strong> is visible: 
+              score dispersion narrows over time (Coeff: -0.084, p < 0.001).
+            </p>
+            <p>
+              This indicates that participants refined their internal scale, rating less sounds with 
+              extreme scores as the experiment progressed.
+            </p>
             </p>
           </div>
         </div>
@@ -180,6 +185,3 @@
     <script src="js/data.js"></script>
   </body>
 </html>
-
-
-
