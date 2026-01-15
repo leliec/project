@@ -727,3 +727,159 @@ footer.footer a:hover {
   fill: var(--light-purple);
   font-weight: 600;
 }
+
+/* ===================================
+   MODEL PERFORMANCE SECTIONS
+   =================================== */
+.model-performance {
+  margin: 50px 0;
+  padding: 35px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(172, 134, 239, 0.2);
+  border-radius: 8px;
+}
+
+.model-performance h3 {
+  text-align: center;
+  color: var(--light-purple);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.model-formula {
+  text-align: center;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--light-purple);
+  margin: 20px 0 10px 0;
+  padding: 15px;
+  background: rgba(172, 134, 239, 0.05);
+  border-radius: 8px;
+}
+
+.formula-explanation {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--white);
+  opacity: 0.8;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.metric-description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+  color: var(--white);
+  line-height: 1.7;
+}
+
+.metric-description strong {
+  color: var(--light-purple);
+}
+
+/* ===================================
+   COMPACT METRICS GRID
+   =================================== */
+.metrics-grid-compact {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.metric-box-compact {
+  background: rgba(172, 134, 239, 0.08);
+  border: 2px solid var(--dark-purple);
+  border-radius: 8px;
+  padding: 20px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.metric-box-compact:hover {
+  background: rgba(172, 134, 239, 0.15);
+  border-color: var(--light-purple);
+  transform: translateY(-3px);
+}
+
+.metric-box-compact .metric-label {
+  font-size: 1.1rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.metric-box-compact .metric-value {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--light-purple);
+  margin: 5px 0;
+}
+
+.metric-box-compact .metric-unit {
+  font-size: 0.95rem;
+  color: var(--white);
+  opacity: 0.7;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* ===================================
+   REMOVE OLD STYLES (if they exist)
+   Replace these old classes with the new compact versions
+   =================================== */
+
+/* DELETE OR REPLACE if you have these in your CSS:
+.nn-metrics { ... }
+.metrics-grid { ... }
+.metric-box { ... }
+.metric-label { ... }
+.metric-value { ... }
+.metric-unit { ... }
+.metric-explanation { ... }
+*/
+
+/* ===================================
+   RESPONSIVE UPDATES
+   =================================== */
+@media (max-width: 768px) {
+  .model-performance {
+    padding: 20px;
+  }
+
+  .model-performance h3 {
+    font-size: 1.5rem;
+  }
+
+  .model-formula {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .formula-explanation {
+    font-size: 1rem;
+  }
+
+  .metrics-grid-compact {
+    gap: 15px;
+  }
+
+  .metric-box-compact {
+    padding: 15px 20px;
+    min-width: 130px;
+  }
+
+  .metric-box-compact .metric-value {
+    font-size: 1.8rem;
+  }
+
+  .metric-description {
+    font-size: 1.05rem;
+  }
+}
