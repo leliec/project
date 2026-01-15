@@ -454,4 +454,3 @@ window.addEventListener("load", () => {
     drawNNChart();
   });
 });
-
