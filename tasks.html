@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <title>Results – Regression Analysis</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -29,7 +29,12 @@
 
     <main class="main-content">
       <section class="centered-section fade-in">
-        <h2>Results</h2>
+        <h2>Results - Linear Regression</h2>
+        <p>
+          Explore the influence of each sound parameter. The further a point is
+          from the center, the stronger its impact (positive or negative) on the
+          anxiety score.
+        </p>
         <div class="results-layout">
           <div id="regression-chart"></div>
           <div id="detail-box" class="detail-card">
@@ -52,34 +57,113 @@
             </div>
           </div>
         </div>
+
+        <div class="model-performance">
+          <h3>Model & Performance</h3>
+          <p class="model-description-text">
+            The analysis is based on a weighted multivariate linear regression
+            (WLS) modeling the relationship between the perceived anxiety score
+            and synthesis parameters:
+          </p>
+          <div class="model-formula">
+            <p>Yᵢ =(β₀ + ∑ⱼ₌₁ᵖ βⱼ·Xᵢⱼ + εᵢ)</p>
+          </div>
+          <p class="formula-explanation">
+            <strong>Yᵢ</strong>: mean anxiety score of sound i<br />
+            <strong>Xᵢⱼ</strong>: normalized synthesis parameters (ADSR envelope
+            of the first oscillator, total number of active oscillators,
+            presence of each waveform, number of oscillators with non-zero fine
+            frequency, fundamental frequency deviation)<br />
+            <strong>βⱼ</strong>: estimated coefficients for each variable<br />
+            <strong>wᵢ</strong>: weight for sound i, defined as wᵢ = 1 / (σᵢ +
+            ε), where σᵢ is the standard deviation of ratings for sound i and ε
+            a regularization constant (median of standard deviations)<br />
+            <strong>εᵢ</strong>: residual error
+          </p>
+          <p class="weighting-explanation">
+            Sounds with more consistent ratings (lower standard deviation)
+            receive greater weight in parameter estimation.
+          </p>
+
+          <div class="metrics-grid-compact">
+            <div class="metric-box-compact">
+              <div class="metric-label">R²</div>
+              <div class="metric-value">0.484</div>
+            </div>
+          </div>
+          <p class="metric-description">
+            This linear model explains <strong>48.4%</strong> of the variance in
+            anxiety scores. The remaining variance reflects individual
+            differences in sound perception and potential missing parameters not
+            captured by the model.
+          </p>
+        </div>
       </section>
 
       <hr class="section-divider" />
 
       <section class="centered-section fade-in">
-        <h2>Model</h2>
+        <h2>Predictive Neural Network</h2>
         <p>
-          The analysis is based on a multivariate linear regression aimed at
-          modeling the relationship between the perceived anxiety score based on
-          synthesis parameters:
-        </p>
-        <p style="text-align: center; font-style: italic; margin: 20px 0">
-          Yᵢ = β₀ + ∑ⱼ₌₁ᵖ βⱼ·Xᵢⱼ + εᵢ
+          We trained a <strong>multi-layer perceptron (MLP)</strong> with two
+          hidden layers (64 and 32 neurons) to predict anxiety scores based on
+          the same 11 acoustic features. The model learns non-linear
+          relationships.
         </p>
         <p>
-          <strong>Yᵢ</strong>: anxiety score of sound i<br />
-          <strong>Xᵢⱼ</strong>: various synthesis parameters (ADSR envelope
-          variables of the first oscillator) and added variables: the total
-          number of oscillators used, the presence of each waveform (sinusoidal,
-          triangular, square, sawtooth), the number of oscillators with a
-          non-zero "fine" frequency, an indicator of a fundamental frequency
-          deviation likely to generate dissonance or internal timbre
-          movement.<br />
-          <strong>βⱼ</strong>: estimated coefficients for each independent
-          variable<br />
-          <strong>εᵢ</strong>: error
+          <strong>In simple terms:</strong> The neural network acts as a
+          "virtual listener" that estimates how anxiogenic a sound will be
+          perceived for a test set of unseen data, based on patterns learned
+          from 200 rated sounds.
         </p>
+
+        <div class="results-layout">
+          <div id="nn-chart"></div>
+          <div class="detail-card">
+            <div id="nn-detail-default">
+              <p>Click on a data point to hear the corresponding sound.</p>
+            </div>
+            <div id="nn-detail-content" style="display: none">
+              <h4>Sound <span id="nn-sound-id"></span></h4>
+              <div class="stats-row">
+                <span>Actual: <strong id="nn-actual"></strong></span>
+                <span>Predicted: <strong id="nn-predicted"></strong></span>
+              </div>
+              <div class="stats-row">
+                <span>Error: <strong id="nn-error"></strong> pts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="model-performance">
+          <h3>Model & Performance</h3>
+          <div class="metrics-grid-compact">
+            <div class="metric-box-compact">
+              <div class="metric-label">Test MAE</div>
+              <div class="metric-value">13.59</div>
+              <div class="metric-unit">points</div>
+            </div>
+            <div class="metric-box-compact">
+              <div class="metric-label">Test R²</div>
+              <div class="metric-value">0.447</div>
+              <div class="metric-unit">variance explained</div>
+            </div>
+          </div>
+          <p class="metric-description">
+            It achieves a Mean Absolute Error (MAE) of
+            <strong>13.59 points</strong> on unseen test data, meaning
+            predictions are typically off by about 14%. The R² of 0.447
+            indicates that <strong>44.7% of anxiety variance</strong> is
+            captured by acoustic features alone. Again, the remaining variance
+            likely stems from the inherently subjective nature of emotional
+            responses to sound, or lack of parameters at play.
+          </p>
+        </div>
       </section>
+
+      <hr class="section-divider" />
+
       <div class="navigation-buttons fade-in">
         <a href="index.html" class="nav-button">Back to Theory</a>
         <a href="data.html" class="nav-button">Explore the Data</a>
@@ -99,5 +183,3 @@
     <script src="js/task.js"></script>
   </body>
 </html>
-
-
