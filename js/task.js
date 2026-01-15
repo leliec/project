@@ -38,7 +38,7 @@ const interpretations = {
   nb_osc_fine_not_zero: {
     title: "Detune (Fine Tuning)",
     desc: "When oscillators are detuned from one another, higher anxiety is induced. The resulting frequency interference creates 'beating' effects and sensory roughness, signals associated with acoustic instability.",
-    legend: "Instability via detuning:",
+    legend: "Detuning:",
     audio: "media/audio/SON126.wav",
   },
   osc1_coarse: {
@@ -454,3 +454,4 @@ window.addEventListener("load", () => {
     drawNNChart();
   });
 });
+
