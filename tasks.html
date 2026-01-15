@@ -58,44 +58,66 @@
           </div>
         </div>
 
-        <div class="model-performance">
-          <h3>Model & Performance</h3>
-          <p class="model-description-text">
-            The analysis is based on a weighted multivariate linear regression
-            (WLS) modeling the relationship between the perceived anxiety score
-            and synthesis parameters:
-          </p>
-          <div class="model-formula">
-            <p>Yᵢ =(β₀ + ∑ⱼ₌₁ᵖ βⱼ·Xᵢⱼ + εᵢ)</p>
-          </div>
-          <p class="formula-explanation">
-            <strong>Yᵢ</strong>: mean anxiety score of sound i<br />
-            <strong>Xᵢⱼ</strong>: normalized synthesis parameters (ADSR envelope
-            of the first oscillator, total number of active oscillators,
-            presence of each waveform, number of oscillators with non-zero fine
-            frequency, fundamental frequency deviation)<br />
-            <strong>βⱼ</strong>: estimated coefficients for each variable<br />
-            <strong>wᵢ</strong>: weight for sound i, defined as wᵢ = 1 / (σᵢ +
-            ε), where σᵢ is the standard deviation of ratings for sound i and ε
-            a regularization constant (median of standard deviations)<br />
-            <strong>εᵢ</strong>: residual error
-          </p>
-          <p class="weighting-explanation">
-            Sounds with more consistent ratings (lower standard deviation)
-            receive greater weight in parameter estimation.
-          </p>
 
-          <div class="metrics-grid-compact">
-            <div class="metric-box-compact">
-              <div class="metric-label">R²</div>
-              <div class="metric-value">0.484</div>
-            </div>
-          </div>
-          <p class="metric-description">
-            This linear model explains <strong>48.4%</strong> of the variance in
-            anxiety scores. The remaining variance reflects individual
-            differences in sound perception and potential missing parameters not
-            captured by the model.
+              <hr class="section-divider" />
+      <section class="centered-section fade-in">
+        <h2>Model</h2>
+        <p
+          style="
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 40px;
+            color: var(--light-purple);
+          "
+        >
+          The analysis is based on a weighted multivariate linear regression
+          (WLS) modeling the relationship between the perceived anxiety score
+          and synthesis parameters:
+        </p>
+        <p style="text-align: center; font-style: italic; margin: 20px 0">
+          Yᵢ = β₀ + ∑ⱼ₌₁ᵖ βⱼ·Xᵢⱼ + εᵢ
+        </p>
+        <p
+          style="
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 40px;
+            color: var(--light-purple);
+          "
+        >
+          <strong>Yᵢ</strong>: mean anxiety score of sound i<br />
+          <strong>Xᵢⱼ</strong>: normalized synthesis parameters (ADSR envelope
+          of the first oscillator, total number of active oscillators, presence
+          of each waveform, number of oscillators with non-zero fine frequency,
+          fundamental frequency deviation)<br />
+          <strong>βⱼ</strong>: estimated coefficients for each variable<br />
+          <strong>εᵢ</strong>: residual error
+        </p>
+        <p>
+          <strong>Weighting</strong>: Each observation is weighted by wᵢ = 1 /
+          (σᵢ + ε), where σᵢ is the standard deviation of ratings for sound i
+          and ε a regularization constant (median of standard deviations).
+          Sounds with more consistent ratings (lower standard deviation) thus
+          receive greater weight in parameter estimation.
+        </p>
+      </section>
+
+
+        
+        <div class="metric-explanation">
+          <p
+            style="
+              font-size: 1.3rem;
+              text-align: center;
+              margin-top: 40px;
+              color: var(--light-purple);
+            "
+          >
+            <strong>Model Performance:</strong> R² = 0.484 : This linear model
+            explains <strong>48.4%</strong> of the variance in anxiety scores.
+            The remaining variance reflects individual differences in sound
+            perception and potential missing parameters not captured by the
+            model.
           </p>
         </div>
       </section>
@@ -136,21 +158,37 @@
           </div>
         </div>
 
-        <div class="model-performance">
-          <h3>Model & Performance</h3>
-          <div class="metrics-grid-compact">
-            <div class="metric-box-compact">
+        <div class="nn-metrics">
+          <h3
+            style="
+              text-align: center;
+              color: var(--light-purple);
+              margin: 50px 0 30px 0;
+              font-size: 1.6rem;
+            "
+          >
+            Model Performance Metrics
+          </h3>
+          <div class="metrics-grid">
+            <div class="metric-box">
               <div class="metric-label">Test MAE</div>
               <div class="metric-value">13.59</div>
               <div class="metric-unit">points</div>
             </div>
-            <div class="metric-box-compact">
+            <div class="metric-box">
               <div class="metric-label">Test R²</div>
               <div class="metric-value">0.447</div>
               <div class="metric-unit">variance explained</div>
             </div>
           </div>
-          <p class="metric-description">
+          <p
+            style="
+              text-align: center;
+              margin-top: 30px;
+              font-size: 1.2rem;
+              line-height: 1.7;
+            "
+          >
             It achieves a Mean Absolute Error (MAE) of
             <strong>13.59 points</strong> on unseen test data, meaning
             predictions are typically off by about 14%. The R² of 0.447
