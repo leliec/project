@@ -1,4 +1,4 @@
-=================================
+/* ===================================
    RESET & VARIABLES
    =================================== */
 * {
@@ -47,8 +47,8 @@ body.data-page {
   right: 25px;
   z-index: 3000;
   cursor: pointer;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
 }
 
 .menu-toggle img {
@@ -59,16 +59,16 @@ body.data-page {
 
 .dropdown-menu {
   position: fixed;
-  top: 95px;
+  top: 85px;
   right: 25px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
-  padding: 22px 30px;
-  border-radius: 14px;
+  padding: 20px 28px;
+  border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   display: none;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   z-index: 2500;
   opacity: 0;
   transform: translateY(-10px);
@@ -87,6 +87,7 @@ body.data-page {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 0.95rem;
   transition: color 0.3s;
 }
 
@@ -148,14 +149,14 @@ body.data-page {
 }
 
 .hero-content h1 {
-  font-size: 7.5rem;
+  font-size: 6rem;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .hero-content h2 {
   font-weight: 400;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   color: var(--white);
 }
 
@@ -163,26 +164,26 @@ body.data-page {
    MAIN CONTENT STRUCTURE
    =================================== */
 .main-content {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 55px;
+  padding: 60px 50px;
 }
 
 .centered-section {
-  margin: 60px 0;
+  margin: 50px 0;
   padding: 0 20px;
 }
 
 .centered-section h2 {
   color: var(--dark-purple);
-  font-size: 2.6rem;
-  margin-bottom: 28px;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
   text-align: center;
 }
 
 .centered-section p {
-  font-size: 1.25rem;
-  line-height: 1.75;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: var(--white);
   text-align: justify;
   margin-bottom: 18px;
@@ -201,10 +202,10 @@ body.data-page {
 
 .centered-image {
   display: block;
-  width: 75%;
-  max-width: 750px;
-  margin: 38px auto;
-  border-radius: 13px;
+  width: 70%;
+  max-width: 700px;
+  margin: 35px auto;
+  border-radius: 12px;
   object-fit: cover;
 }
 
@@ -214,14 +215,14 @@ body.data-page {
 .navigation-buttons {
   display: flex;
   justify-content: center;
-  gap: 35px;
-  margin: 55px 0;
+  gap: 30px;
+  margin: 50px 0;
   flex-wrap: wrap;
 }
 
 .nav-button {
-  padding: 18px 36px;
-  font-size: 1.2rem;
+  padding: 16px 32px;
+  font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -249,12 +250,12 @@ body.data-page {
   flex-direction: column;
   gap: 18px;
   align-items: center;
-  margin: 38px 0;
+  margin: 35px 0;
 }
 
 .download-button {
-  padding: 16px 32px;
-  font-size: 1.1rem;
+  padding: 15px 30px;
+  font-size: 1.05rem;
   color: var(--light-purple);
   background-color: rgba(172, 134, 239, 0.1);
   border: 2px solid var(--light-purple);
@@ -262,7 +263,7 @@ body.data-page {
   text-decoration: none;
   transition: all 0.3s ease;
   text-align: center;
-  max-width: 580px;
+  max-width: 550px;
   width: 100%;
 }
 
@@ -284,7 +285,7 @@ body.data-page {
     var(--dark-purple),
     transparent
   );
-  margin: 70px auto;
+  margin: 60px auto;
   max-width: 80%;
   opacity: 0.5;
 }
@@ -294,7 +295,7 @@ body.data-page {
    =================================== */
 .fade-in {
   opacity: 0;
-  transform: translateY(35px);
+  transform: translateY(30px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -308,8 +309,8 @@ body.data-page {
    =================================== */
 audio {
   width: 100%;
-  max-width: 370px;
-  border-radius: 19px;
+  max-width: 350px;
+  border-radius: 18px;
   background: #150029;
   padding: 6px;
   box-shadow: 0 0 10px rgba(22, 0, 88, 0.3);
@@ -317,7 +318,7 @@ audio {
 
 audio::-webkit-media-controls-panel {
   background-color: transparent;
-  border-radius: 19px;
+  border-radius: 18px;
 }
 
 audio::-webkit-media-controls-timeline {
@@ -339,16 +340,16 @@ audio::-webkit-media-controls-play-button {
    =================================== */
 .podiums-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 45px;
-  margin: 55px 0;
-  padding: 0 35px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  margin: 50px 0;
+  padding: 0 30px;
 }
 
 .podium-group h3 {
   text-align: center;
-  margin-bottom: 28px;
-  font-size: 1.3rem;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--light-purple);
   text-transform: uppercase;
@@ -359,12 +360,12 @@ audio::-webkit-media-controls-play-button {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 190px;
+  height: 180px;
   gap: 10px;
 }
 
 .step {
-  width: 65px;
+  width: 60px;
   background: var(--dark-purple);
   border: 2px solid var(--light-purple);
   display: flex;
@@ -381,7 +382,7 @@ audio::-webkit-media-controls-play-button {
 
 .step span {
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: white;
 }
 
@@ -405,24 +406,24 @@ audio::-webkit-media-controls-play-button {
    =================================== */
 .distribution-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 45px;
-  margin: 55px 0;
-  padding: 0 35px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  margin: 50px 0;
+  padding: 0 30px;
 }
 
 .chart-box {
   background: rgba(0, 0, 0, 0.3);
-  padding: 28px;
+  padding: 25px;
   border: 1px solid rgba(172, 134, 239, 0.2);
   border-radius: 8px;
 }
 
 .chart-title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 23px;
+  margin-bottom: 20px;
   color: var(--light-purple);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -431,13 +432,13 @@ audio::-webkit-media-controls-play-button {
 .d3-chart svg .x-axis text,
 .d3-chart svg .y-axis text {
   font-family: "OCR A Std", monospace;
-  font-size: 1rem;
+  font-size: 0.95rem;
   fill: var(--white);
 }
 
 .d3-chart svg text.axis-label {
   font-family: "OCR A Std", monospace;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   fill: var(--light-purple);
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -447,33 +448,33 @@ audio::-webkit-media-controls-play-button {
    BIAS SECTION (DATA PAGE)
    =================================== */
 .bias-section {
-  margin: 70px 0;
-  padding: 0 35px;
+  margin: 60px 0;
+  padding: 0 30px;
 }
 
 .bias-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 45px;
+  gap: 40px;
   align-items: start;
 }
 
 .smaller-text {
-  padding: 28px;
+  padding: 25px;
   background: rgba(172, 134, 239, 0.05);
   border-left: 4px solid var(--light-purple);
   border-radius: 8px;
 }
 
 .smaller-text h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--light-purple);
   margin-bottom: 18px;
 }
 
 .smaller-text p {
-  font-size: 1.1rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.6;
   text-align: justify;
 }
 
@@ -483,28 +484,28 @@ audio::-webkit-media-controls-play-button {
 .results-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 45px;
-  margin: 55px 0;
-  padding: 0 35px;
+  gap: 40px;
+  margin: 50px 0;
+  padding: 0 30px;
 }
 
 #regression-chart {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(172, 134, 239, 0.2);
-  padding: 28px;
+  padding: 25px;
   border-radius: 8px;
 }
 
 #regression-chart svg .x-axis text,
 #regression-chart svg .y-axis text {
   font-family: "OCR A Std", monospace;
-  font-size: 1.05rem;
+  font-size: 1rem;
   fill: var(--white);
 }
 
 #regression-chart svg text.axis-label {
   font-family: "OCR A Std", monospace;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   fill: var(--light-purple);
   font-weight: 600;
 }
@@ -512,16 +513,16 @@ audio::-webkit-media-controls-play-button {
 .detail-card {
   background: #0a0112;
   border: 2px solid var(--dark-purple);
-  padding: 28px;
+  padding: 25px;
   border-radius: 8px;
-  min-height: 480px;
+  min-height: 450px;
   position: sticky;
   top: 20px;
 }
 
 .detail-card h4 {
   color: var(--light-purple);
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   margin-bottom: 18px;
   text-transform: uppercase;
 }
@@ -531,7 +532,7 @@ audio::-webkit-media-controls-play-button {
   flex-wrap: wrap;
   gap: 18px;
   margin-bottom: 18px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .stats-row strong {
@@ -539,14 +540,14 @@ audio::-webkit-media-controls-play-button {
 }
 
 .detail-card p {
-  font-size: 1.1rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.6;
   margin-bottom: 18px;
   text-align: justify;
 }
 
 #detail-default p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-style: italic;
   color: var(--light-purple);
   opacity: 0.8;
@@ -554,9 +555,9 @@ audio::-webkit-media-controls-play-button {
 }
 
 .audio-example {
-  margin-top: 23px;
+  margin-top: 20px;
   background: rgba(255, 255, 255, 0.05);
-  padding: 14px;
+  padding: 12px;
   border-radius: 8px;
 }
 
@@ -571,8 +572,8 @@ footer.footer {
   background-color: #0a0112;
   color: #ebd8f2;
   padding: 1.8rem 1rem;
-  font-size: 1.05rem;
-  margin-top: 70px;
+  font-size: 1rem;
+  margin-top: 60px;
 }
 
 footer.footer p {
@@ -610,15 +611,15 @@ footer.footer a:hover {
 
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
   }
 
   .hero-content h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .main-content {
-    padding: 55px 20px;
+    padding: 50px 20px;
   }
 
   .centered-section {
@@ -626,11 +627,11 @@ footer.footer a:hover {
   }
 
   .centered-section h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .centered-section p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .navigation-buttons {
@@ -640,7 +641,7 @@ footer.footer a:hover {
 
   .nav-button {
     width: 100%;
-    max-width: 290px;
+    max-width: 280px;
   }
 
   .podiums-wrapper {
@@ -652,8 +653,8 @@ footer.footer a:hover {
    NEURAL NETWORK SECTION
    =================================== */
 .nn-metrics {
-  margin: 55px 0;
-  padding: 38px;
+  margin: 50px 0;
+  padding: 35px;
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(172, 134, 239, 0.2);
   border-radius: 8px;
@@ -661,16 +662,16 @@ footer.footer a:hover {
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 28px;
-  margin: 28px 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin: 25px 0;
 }
 
 .metric-box {
   background: rgba(172, 134, 239, 0.08);
   border: 2px solid var(--dark-purple);
   border-radius: 8px;
-  padding: 28px;
+  padding: 25px;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -682,49 +683,49 @@ footer.footer a:hover {
 }
 
 .metric-label {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--white);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .metric-value {
-  font-size: 2.6rem;
+  font-size: 2.3rem;
   font-weight: bold;
   color: var(--light-purple);
   margin: 10px 0;
 }
 
 .metric-unit {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--white);
   opacity: 0.7;
   font-style: italic;
 }
 
 .metric-explanation {
-  margin: 38px 0;
-  padding: 0 35px;
+  margin: 35px 0;
+  padding: 0 30px;
 }
 
 #nn-chart {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(172, 134, 239, 0.2);
-  padding: 28px;
+  padding: 25px;
   border-radius: 8px;
 }
 
 #nn-chart svg .x-axis text,
 #nn-chart svg .y-axis text {
   font-family: "OCR A Std", monospace;
-  font-size: 1.05rem;
+  font-size: 1rem;
   fill: var(--white);
 }
 
 #nn-chart svg text.axis-label {
   font-family: "OCR A Std", monospace;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   fill: var(--light-purple);
   font-weight: 600;
 }
