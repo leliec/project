@@ -97,19 +97,38 @@
           To construct the dataset of 256 sounds, random generation of
           parameters ensured a more uniform distribution of possible
           combinations. The waveforms of the four oscillators constituted the
-          main source of variation, while other parameters such as modulation
-          frequencies (fine) and temporal envelopes (ADSR) were randomly
+          main source of variation, while other parameters — such as modulation
+          frequencies (fine) and temporal envelopes (ADSR) — were randomly
           assigned according to representative ranges of slow, medium, or fast
           variations. This method allowed covering a wide range of combinations
           while limiting biases in the distribution of generated sounds.
         </p>
         <p>
           Each sound was implemented in Operator, then evaluated by several
-          listeners via an online survey. Since the number of active oscillators
-          varied from one sound to another, many parameters were not used,
-          resulting in the presence of missing values (NaN) in the dataset. To
-          address this problem and maintain a coherent representation of sounds,
-          several derived variables were created.
+          listeners via an online
+          <a
+            href="https://leliec.github.io/demo/"
+            target="_blank"
+            style="color: var(--light-purple); text-decoration: underline"
+            >survey</a
+          >. It consisted of successive listening tasks in which participants
+          evaluated the perceived anxiety induced by sounds. Each sound was
+          rated on a continuous scale from 0 to 100 using a slider, where 0
+          corresponded to “not anxiety-inducing,” 33 to “slightly
+          anxiety-inducing,” 66 to “moderately anxiety-inducing,” and 100 to
+          “highly anxiety-inducing.” Sounds were presented in random order for
+          each participant in batches of 10. After completing the first batch,
+          participants could continue by evaluating additional sets of 5 sounds
+          as many times as they wished. To limit attrition, progress was
+          displayed out of 50 sounds, although some participants evaluated up to
+          150 sounds.
+        </p>
+        <p>
+          Since the number of active oscillators varied from one sound to
+          another, many parameters were not used, resulting in the presence of
+          missing values (NaN) in the dataset. To address this problem and
+          maintain a coherent representation of sounds, several derived
+          variables were created.
         </p>
       </section>
       <div class="navigation-buttons fade-in">
@@ -129,6 +148,7 @@
     <script src="js/common.js"></script>
   </body>
 </html>
+
 
 
 
